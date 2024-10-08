@@ -1,0 +1,31 @@
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.searchBar {
+  text-decoration: none;
+  min-width: 400px;
+  min-height: 48px;
+  border: none;
+  border-bottom: 2px solid #708090;
+  background-color: #f5f5f563;
+  border-radius: 8px 8px 0px 0px;
+  padding-left: 8px;
+  color: #000;
+}
+
+
+
+.search {
+  font-size: 24px;
+  color: #708090;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.search:hover {
+  transform: scale(1.25);
+}

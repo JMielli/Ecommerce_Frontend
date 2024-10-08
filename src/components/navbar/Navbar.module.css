@@ -1,0 +1,114 @@
+.navContainer {
+  min-width: 100vw;
+  height: 100px;
+  padding: 0 100px;
+  background-color: #C9CACC;
+  position: sticky;
+  top: 0px;
+  box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.3);
+  gap: 16px;
+  overflow: hidden;
+}
+
+nav {
+  min-width: 100vw;
+  max-height: 100px;
+  position: sticky;
+  top: 0px;
+  background-color: #C9CACC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.logoContainer {
+  display: flex;
+  margin-left: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoContainer img {
+  text-decoration: none;
+  max-width: 64px;
+  max-height: 64px;
+  border-radius: 50%;
+  border: none;
+  transition: transform 0.5s ease;
+}
+
+.logoContainer img:hover {
+  transform: scale(1.25);
+}
+
+.logoContainer span {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  color: #708090;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+.links a{
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #708090;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: transform 0.5s ease;
+}
+
+.links a:hover {
+  transform: scale(1.15);
+}
+
+
+.authLinks {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+}
+
+.authLinks a{
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #708090;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: transform 0.5s ease;
+}
+
+.authLinks a:hover {
+  transform: scale(1.15);
+}
+
+.cart {
+  display: flex;
+  margin: auto;
+  transition: transform 0.5s ease;
+}
+
+.cart:hover {
+  transform: scale(1.25);
+}

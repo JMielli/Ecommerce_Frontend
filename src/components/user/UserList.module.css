@@ -1,0 +1,22 @@
+/* src/App.css */
+.UserList {
+  text-align: center;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px;
+}
+
+li {
+  display: flex;
+  background-color: #000;
+  color: #f4f4f4;
+  margin: 5px;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  max-width: 100px;
+}
