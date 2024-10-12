@@ -8,6 +8,7 @@ import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import ProductPage from "./components/product/ProductPage";
 
 export default function App() {
 	return (
@@ -20,6 +21,7 @@ export default function App() {
 					<Route path="/about" element={<About />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Register />} />
+					<Route path="/products/product/:id" element={<ProductPage />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>

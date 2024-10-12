@@ -16,8 +16,8 @@ function Navbar() {
 					<span>LapShop</span>
 				</div>
 				<div className={styles.links}>
-					<Link to="/contact">Contato</Link>
 					<Link to="/about">Quem Somos</Link>
+					<Link to="/contact">Contato</Link>
 				</div>
 				<div className={styles.authLinks}>
 					<Link to="/login">Login</Link>

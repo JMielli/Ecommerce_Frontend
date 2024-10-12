@@ -1,0 +1,67 @@
+.product-page {
+	max-width: 800px;
+	margin: auto;
+	padding: 20px;
+}
+
+.carousel {
+	position: relative;
+}
+
+.main-image {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.thumbnail-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.thumbnail {
+	width: 80px;
+	height: auto;
+	margin: 0 5px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.product-title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.product-price {
+	font-size: 20px;
+	color: #b12704; /* Cor do preço na Amazon */
+}
+
+.stock-info {
+	margin-top: 10px;
+}
+
+.details-list {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.details-list li {
+	margin-bottom: 8px;
+}
+
+.buy-button {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 10px 15px;
+	background-color: #ffa41c; /* Cor do botão */
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.buy-button:hover {
+	background-color: #ff8c00; /* Cor do botão ao passar o mouse */
+}

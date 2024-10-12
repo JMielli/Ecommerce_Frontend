@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios"; // Importando Axios
 import "./Register.css"; // Importando o arquivo de estilos
 
 const UserForm = () => {
@@ -11,7 +12,7 @@ const UserForm = () => {
 		telephone: "",
 		addresses: [
 			{
-				// Alterado para permitir múltiplos endereços
+				// Inicializa com um endereço
 				zipCode: "",
 				street: "",
 				number: "",
@@ -26,19 +27,20 @@ const UserForm = () => {
 		const { name, value } = e.target;
 
 		if (name.startsWith("addresses.")) {
-			const index = name.split(".")[1];
-			const addressField = name.split(".")[2];
-			const updatedAddresses = [...formData.addresses];
-			updatedAddresses[index][addressField] = value;
-
+			const index = name.split(".")[1]; // Pega o índice do endereço
+			const addressField = name.split(".")[2]; // Pega o campo específico do endereço
 			setFormData((prevState) => ({
 				...prevState,
-				addresses: updatedAddresses,
+				addresses: prevState.addresses.map((address, i) =>
+					i === parseInt(index)
+						? { ...address, [addressField]: value } // Atualiza o campo correto
+						: address
+				),
 			}));
 		} else {
 			setFormData((prevState) => ({
 				...prevState,
-				[name]: value,
+				[name]: value, // Atualiza outros campos do formData
 			}));
 		}
 	};
@@ -64,30 +66,22 @@ const UserForm = () => {
 		e.preventDefault();
 
 		try {
-			const response = await fetch("http://localhost:3003/user/newUser", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(formData),
-			});
-
-			if (!response.ok) {
-				throw new Error("Erro ao criar usuário");
-			}
-
-			const data = await response.json();
-			console.log("Usuário criado com sucesso:", data);
+			const response = await axios.post("http://localhost:3003/user", formData);
+			alert("Usuário criado com sucesso:\n", response.data);
 		} catch (error) {
-			console.error(error);
+			console.error(
+				"Erro ao criar usuário:",
+				error.response ? error.response.data : error.message
+			);
 		}
+
+		console.log(formData); // Para verificar os dados antes do envio
 	};
 
 	return (
 		<div className="form-container">
 			<form onSubmit={handleSubmit}>
 				<h2>Criar Conta</h2>
-
 				<div className="form-row">
 					<label className="label">
 						Nome:
@@ -166,18 +160,18 @@ const UserForm = () => {
 					</label>
 				</div>
 
+				<h3>Endereços</h3>
 				{formData.addresses.map((address, index) => (
 					<div key={index} className="address-container">
-						<h3>Endereço {index + 1}</h3>
 						<div className="form-row">
 							<label className="label">
 								CEP:
 								<input
 									type="text"
-									name={`addresses.${index}.zipCode`}
+									name={`addresses.${index}.zipCode`} // Nome correto para o campo CEP
 									className="input-field"
-									value={address.zipCode}
-									onChange={handleChange}
+									value={address.zipCode} // Valor correto do state
+									onChange={handleChange} // Chama handleChange corretamente
 									required
 								/>
 							</label>
@@ -186,10 +180,10 @@ const UserForm = () => {
 								Rua:
 								<input
 									type="text"
-									name={`addresses.${index}.street`}
+									name={`addresses.${index}.street`} // Nome correto para o campo rua
 									className="input-field"
-									value={address.street}
-									onChange={handleChange}
+									value={address.street} // Valor correto do state
+									onChange={handleChange} // Chama handleChange corretamente
 									required
 								/>
 							</label>
@@ -200,10 +194,10 @@ const UserForm = () => {
 								Número:
 								<input
 									type="number"
-									name={`addresses.${index}.number`}
+									name={`addresses.${index}.number`} // Nome correto para o campo número
 									className="input-field"
-									value={address.number}
-									onChange={handleChange}
+									value={address.number} // Valor correto do state
+									onChange={handleChange} // Chama handleChange corretamente
 									required
 								/>
 							</label>
@@ -212,10 +206,10 @@ const UserForm = () => {
 								Complemento:
 								<input
 									type="text"
-									name={`addresses.${index}.complement`}
+									name={`addresses.${index}.complement`} // Nome correto para o campo complemento
 									className="input-field"
-									value={address.complement}
-									onChange={handleChange}
+									value={address.complement} // Valor correto do state
+									onChange={handleChange} // Chama handleChange corretamente
 								/>
 							</label>
 						</div>
@@ -225,10 +219,10 @@ const UserForm = () => {
 								Ponto de Referência:
 								<input
 									type="text"
-									name={`addresses.${index}.referencePoint`}
+									name={`addresses.${index}.referencePoint`} // Nome correto para o campo ponto de referência
 									className="input-field"
-									value={address.referencePoint}
-									onChange={handleChange}
+									value={address.referencePoint} // Valor correto do state
+									onChange={handleChange} // Chama handleChange corretamente
 								/>
 							</label>
 
@@ -236,10 +230,10 @@ const UserForm = () => {
 								Apelido do Endereço:
 								<input
 									type="text"
-									name={`addresses.${index}.nicknameAddress`}
+									name={`addresses.${index}.nicknameAddress`} // Nome correto para o campo apelido do endereço
 									className="input-field"
-									value={address.nicknameAddress}
-									onChange={handleChange}
+									value={address.nicknameAddress} // Valor correto do state
+									onChange={handleChange} // Chama handleChange corretamente
 									required
 								/>
 							</label>
@@ -247,9 +241,11 @@ const UserForm = () => {
 					</div>
 				))}
 
+				{/* Botão para adicionar mais um endereço */}
 				<button type="button" onClick={addAddress}>
 					Adicionar Endereço
 				</button>
+
 				<button type="submit">Criar Conta</button>
 			</form>
 		</div>
