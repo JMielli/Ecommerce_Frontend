@@ -4,8 +4,15 @@
 	padding: 20px;
 }
 
+.top-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
 .carousel {
-	position: relative;
+	flex: 1;
+	margin-right: 20px;
 }
 
 .main-image {
@@ -26,6 +33,37 @@
 	margin: 0 5px;
 	cursor: pointer;
 	border-radius: 4px;
+	border: 2px solid transparent;
+	transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover {
+	border-color: #ffa41c;
+}
+
+.buttons-section {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.buy-button,
+.add-to-cart-button {
+	display: inline-block;
+	width: 200px;
+	margin-top: 10px;
+	padding: 10px 15px;
+	background-color: #ffa41c;
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.buy-button:hover,
+.add-to-cart-button:hover {
+	background-color: #ff8c00;
 }
 
 .product-title {
@@ -36,32 +74,20 @@
 
 .product-price {
 	font-size: 20px;
-	color: #b12704; /* Cor do preço na Amazon */
+	color: #b12704;
 }
 
 .stock-info {
 	margin-top: 10px;
 }
 
-.details-list {
-	list-style-type: none;
-	padding-left: 0;
+.details-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 15px;
 }
 
-.details-list li {
-	margin-bottom: 8px;
-}
-
-.buy-button {
-	display: inline-block;
-	margin-top: 20px;
-	padding: 10px 15px;
-	background-color: #ffa41c; /* Cor do botão */
-	color: white;
-	text-decoration: none;
-	border-radius: 5px;
-}
-
-.buy-button:hover {
-	background-color: #ff8c00; /* Cor do botão ao passar o mouse */
+.details-table td {
+	padding: 10px;
+	border: 1px solid #ddd;
 }

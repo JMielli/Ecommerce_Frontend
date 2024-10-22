@@ -1,13 +1,5 @@
+import CartInfo from "./CartInfo";
 
-import { FaShoppingCart } from "react-icons/fa";
-import React from 'react'
+const Cart = () => <CartInfo />;
 
-import styles from './Cart.module.css'
-
-const Cart = () => {
-  return (
-      <FaShoppingCart className={styles.cart}/>
-  )
-}
-
-export default Cart
+export default Cart;

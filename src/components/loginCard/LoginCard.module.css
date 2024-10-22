@@ -1,0 +1,35 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	min-width: 90%;
+	min-height: 700px;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.3);
+  margin: 8px auto 24px auto;
+}
+
+.links_container {
+  display: flex;
+  margin: 0px auto 24px auto;
+
+}
+
+.form .links_container a {
+	text-decoration: none;
+	color: #708090;
+	font-size: 1rem;
+	font-weight: bold;
+  margin: auto;
+}
+
+.card .form button {
+  margin: 0px auto;
+}
+
+.card .form {
+  margin-top: -150px;
+}

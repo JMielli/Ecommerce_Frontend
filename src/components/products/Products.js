@@ -19,12 +19,4 @@ export const ProductList = () => {
 	}, []);
 
 	return { products };
-
-	// (
-	// <div>
-	// {products.map((product) => (
-	// 	<div key={product._id}>{product.title}</div>
-	// ))}
-	// </div>
-	// );
 };

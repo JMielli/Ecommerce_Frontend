@@ -1,0 +1,18 @@
+.input {
+	display: flex;
+	flex-direction: column;
+	margin: 16px;
+	padding: 16px;
+	border: none;
+	border-bottom: 2px solid #708090;
+	border-radius: 8px;
+	background-color: #C9CACC;
+	min-width: 400px;
+	min-height: 48px;
+	border-radius: 10px 10px 10px 0px;
+	color: #000;
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, .5);
+}

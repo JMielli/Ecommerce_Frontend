@@ -1,0 +1,135 @@
+/* UserProfile.module.css */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+.profileCard {
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 2rem;
+}
+
+.loader {
+	text-align: center;
+	padding: 2rem;
+	font-size: 1.2rem;
+	color: #666;
+}
+
+.error {
+	color: #d32f2f;
+	text-align: center;
+	padding: 2rem;
+}
+
+.profileInfo {
+	margin-top: 2rem;
+}
+
+.infoRow {
+	display: flex;
+	margin-bottom: 1rem;
+	padding: 0.5rem 0;
+	border-bottom: 1px solid #eee;
+}
+
+.infoRow label {
+	font-weight: bold;
+	width: 200px;
+	color: #666;
+}
+
+.addressSection {
+	margin-top: 2rem;
+}
+
+.addressCard {
+	background: #f5f5f5;
+	border-radius: 4px;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+.addressCard h3 {
+	color: #333;
+	margin-bottom: 0.5rem;
+}
+
+.addressCard p {
+	margin: 0.25rem 0;
+	color: #666;
+}
+
+/* Novos estilos para a seção de imagem */
+.imageSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2rem;
+	gap: 1rem;
+}
+
+.profileImageContainer {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 3px solid #eee;
+}
+
+.profileImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.profileImagePlaceholder {
+	width: 100%;
+	height: 100%;
+	background: #f0f0f0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #666;
+}
+
+.imageUploadControls {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.fileInput {
+	display: none;
+}
+
+.fileInputLabel {
+	background: #2196f3;
+	color: white;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.fileInputLabel:hover {
+	background: #1976d2;
+}
+
+.uploadButton {
+	background: #4caf50;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.uploadButton:hover {
+	background: #388e3c;
+}
