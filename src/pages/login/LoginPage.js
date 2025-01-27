@@ -13,7 +13,7 @@ export default function LoginPage() {
 
 	// Se estiver autenticado, redireciona para home
 	if (isAuthenticated) {
-		return <Navigate to="/users/profile/:user._id" />;
+		return <Navigate to="/users/profile/:userId" />;
 	}
 
 	// Se não estiver autenticado, mostra o formulário de login
